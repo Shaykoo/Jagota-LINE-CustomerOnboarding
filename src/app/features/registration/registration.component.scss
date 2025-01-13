@@ -1,0 +1,106 @@
+.registration-container{
+    background-color: #DBE7FF;
+    .logo{
+        margin: 0 auto;
+        display: block;
+        text-align: center; 
+        margin-top: 20px;
+    }
+    
+    .logo img {
+        display: inline-block;
+    }
+
+    .intro{
+        text-align: center;
+        h1{
+            color: #00115A;
+            text-align: center;
+            font-family: "Rethink Sans";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%; /* 46.8px */
+            letter-spacing: -0.36px;
+            margin: 0;
+        }
+        p{
+            color: #767680;
+            text-align: center;
+            font-family: "Reddit Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%; /* 26px */
+            letter-spacing: -0.2px;
+            margin: 5px 0;
+            padding: 0 20px;
+        }
+        .intro-img{
+            align-items: center;
+        }
+    }
+
+   
+    form {
+        margin: 0 10px;
+        padding: 0 16px;
+      }
+      
+      .full-width {
+        width: 100%;
+        color: #000;
+      }
+      
+      button {
+        display: block;
+        margin: 0 auto;
+        border-radius: 100px;
+        background:#0743FF;
+        width: 100%;
+        color: #fff;
+        padding: 10px 24px;
+      }
+    .form-details{
+        p{
+            color: #000;
+            font-family: Inter;
+            font-size:22px;
+            font-style:normal;
+            font-weight:400;
+            line-height:28px;
+            letter-spacing:0px;
+            margin-top: 0;
+        }
+    }
+
+    ::ng-deep .mat-form-field-outline {
+        color: #000;
+        border-color: #000;
+      }
+      .terms{
+        color: rgba(0, 0, 0, 0.70);
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        padding: 0 25px;
+      }
+      .conditions{
+        color: #000;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+   
+}
+
+

@@ -1,0 +1,38 @@
+<div class="registration-container">
+  <div>
+    <div class="logo">
+      <img src="../../../assets/images/registration/J.png" alt="Jagota Logo" />
+  </div>
+  <div class="intro">
+    <h1>Welcome to Jagota</h1>
+    <p class="sub-heading">Let’s get you started with a quick registration.</p>
+
+    <div class="intro-img">
+      <img src="../../../assets/images/registration/register.png"/>
+    </div>
+  </div>
+    
+  
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-details">
+      <p>Enter your details</p>
+    </div>
+  
+    <mat-form-field class="full-width" appearance="outline" floatLabel="always">
+      <mat-label>Customer Code/Group/ รหัสประจำตัวลูกค้า</mat-label>
+      <input matInput formControlName="customerCode" placeholder="Enter your customer code or group" />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="outline" floatLabel="always">
+      <mat-label>Phone Number/ เบอร์มือถือ</mat-label>
+      <input matInput formControlName="phoneNumber" placeholder="Enter Phone Number" />
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">
+      Next
+    </button>
+    <p class="terms">By creating an account or signing you agree to our <span class="conditions">Terms and Conditions</span></p>
+  </form>
+  
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="otp-container">
+    <h1>OTP</h1>
+    <p>We’ve sent an SMS with an activation code to your phone.</p>
+    <form (ngSubmit)="onVerify()">
+      <div class="otp-input">
+        <input type="text" maxlength="1" [(ngModel)]="otp[0]" />
+        <input type="text" maxlength="1" [(ngModel)]="otp[1]" />
+        <input type="text" maxlength="1" [(ngModel)]="otp[2]" />
+        <input type="text" maxlength="1" [(ngModel)]="otp[3]" />
+        <input type="text" maxlength="1" [(ngModel)]="otp[4]" />
+        <input type="text" maxlength="1" [(ngModel)]="otp[5]" />
+      </div>
+      <p>Reference: {{ reference }}</p>
+      <p>OTP Expires in: {{ countdown }}</p>
+      <button mat-raised-button color="primary" type="submit">Verify</button>
+    </form>
+  </div>
+  
