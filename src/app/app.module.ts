@@ -10,11 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NotFoundComponent } from './sub-pages/not-found/not-found.component';
+import { AlreadyExistComponent } from './sub-pages/already-exist/already-exist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmationDialogComponent,
+    NotFoundComponent,
+    AlreadyExistComponent,
   ],
   imports: [
     CommonModule,
