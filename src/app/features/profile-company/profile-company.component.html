@@ -1,7 +1,7 @@
 <div class="company-profile">
     <div class="headliner">
         <div>
-          <img src="../../../assets/images/OTP/backButton.png" alt="Back button" />
+          <img src="../../../assets/images/OTP/backButton.png"  (click)="goBack()" alt="Back button" />
         </div>
         <p style="visibility: hidden;">J</p>
       </div>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="button-section">
-        <button>Delete Account</button>
+        <button (click)="onDeleteProfile()">Delete Account</button>
     </div>
 
 </div>
