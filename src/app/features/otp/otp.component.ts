@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OtpService } from 'src/app/core/services/otp.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-otp',
@@ -11,7 +12,7 @@ export class OtpComponent implements OnInit {
   reference = '123FB12';
   countdown = '03:59';
 
-  constructor(private otpService: OtpService) {}
+  constructor(private otpService: OtpService, private location: Location) {}
 
   ngOnInit() {
     this.startCountdown();
@@ -32,5 +33,9 @@ export class OtpComponent implements OnInit {
     this.otpService.verifyOtp(otpCode).subscribe((res) => {
       console.log('OTP verified!', res);
     });
+  }
+
+  goBack(){
+    this.location.back(); 
   }
 }

@@ -18,6 +18,10 @@ export class RegistrationComponent {
     });
   }
 
+  goOtpPage(){
+    this.router.navigate(['/otp']);
+  }
+
   onSubmit() {
     if (this.registrationForm.valid) {
       const { customerCode, phoneNumber } = this.registrationForm.value;
