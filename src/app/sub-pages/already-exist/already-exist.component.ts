@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-already-exist',
@@ -7,7 +9,7 @@ import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 })
 export class AlreadyExistComponent implements OnInit, OnDestroy{
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
 
   ngOnInit() {
     this.renderer.setStyle(document.body, 'background-color', 'white');
@@ -15,6 +17,10 @@ export class AlreadyExistComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {
     this.renderer.removeStyle(document.body, 'background-color');
+  }
+
+  goToRegisterPage(){
+    this.router.navigate(['/registration']);
   }
 
 }

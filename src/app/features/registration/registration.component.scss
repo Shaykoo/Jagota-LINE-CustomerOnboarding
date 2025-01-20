@@ -51,16 +51,35 @@
         width: 100%;
         color: #000;
       }
-      
-      button {
-        display: block;
-        margin: 0 auto;
+      .button-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 24px;
+        left: 0;
+        right: 0;
+        padding: 0 24px;
+    }
+    
+    .button-section button {
+        padding: 10px 24px;
         border-radius: 100px;
         background:#0743FF;
+        color: #FFF;
+        border: none;
         width: 100%;
-        color: #fff;
-        padding: 10px 24px;
-      }
+    }
+      // button {
+      //   display: block;
+      //   margin: 0 auto;
+      //   border-radius: 100px;
+      //   background:#0743FF;
+      //   width: 100%;
+      //   color: #fff;
+      //   padding: 10px 24px;
+      // }
     .form-details{
         p{
             color: #000;

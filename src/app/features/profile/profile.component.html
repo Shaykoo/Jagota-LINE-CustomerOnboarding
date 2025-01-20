@@ -11,38 +11,22 @@
     <div class="info">
         <h3>Personal Information</h3>
 
-        <div class="info-card">
-            <div class="code">
-                <p>Code: 1234</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <p class="company-name">McDonald's</p>
-                    <p class="company-group">Alibaba Group holdings ltd</p>
+        <div *ngFor="let list of listData">
+            <div class="info-card" (click)="goToCompanyProfile(list)">
+                <div class="code">
+                    <p>Code: {{list?.CUST_CODE}}</p>
                 </div>
-                <img style="width: 24px; height: 24px;" src="../../../assets/images/profile/arrow_forward.png">
-            </div>
-            <div class="phone">
-                <img src="../../../assets/images/complete/phone.png"/>
-                <p>080-212-1xxx</p>
-            </div>
-        </div>
-
-        <div class="info-card" style="margin-top: 16px;">
-            <div class="code">
-                <p>Code: 1234</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <p class="company-name">McDonald's</p>
-                    <p class="company-group">Alibaba Group holdings ltd</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <p class="company-name">{{list?.CUST_NAME}}</p>
+                        <p class="company-group">{{list?.TRADE_NAME}}</p>
+                    </div>
+                    <img style="width: 24px; height: 24px;" src="../../../assets/images/profile/arrow_forward.png">
                 </div>
-                <img style="width: 24px; height: 24px;" src="../../../assets/images/profile/arrow_forward.png">
-            </div>
-            
-            <div class="phone">
-                <img src="../../../assets/images/complete/phone.png"/>
-                <p>080-212-1xxx</p>
+                <div class="phone">
+                    <img src="../../../assets/images/complete/phone.png"/>
+                    <p>{{list?.MOBILE}}</p>
+                </div>
             </div>
         </div>
 

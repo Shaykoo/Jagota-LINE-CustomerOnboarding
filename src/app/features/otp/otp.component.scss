@@ -47,13 +47,14 @@
     gap: 10px;
     flex-wrap: nowrap;
     width: 100%; 
-    margin: 32px 0;
+    margin: 32px 0 12px 0;
   }
   
   .otp-input input {
     flex: 1 1 auto;
-    width: 0px;
-    padding: 18px 22px;
+    width: 56px;
+    height: 72px;
+   // padding: 18px 22px;
     font-size: 24px;
     text-align: center;
     border-radius: 15px;
@@ -61,6 +62,19 @@
     background-color: transparent;
   }
   
+  .otp-input input.error-border {
+    border-color: #BA1A1A;
+  }
+  
+  .otp-error-message {
+    color: #BA1A1A;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  
+
   .sub-para{
     text-align: center;
     margin: 20px;

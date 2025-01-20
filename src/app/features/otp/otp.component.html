@@ -1,27 +1,76 @@
 <div class="otp-container">
-    <div class="headliner">
-      <div>
-        <img src="../../../assets/images/OTP/backButton.png" (click)="goBack()" alt="Back button" />
-      </div>
-      <p>J</p>
+  <div class="headliner">
+    <div>
+      <img 
+        src="../../../assets/images/OTP/backButton.png" 
+        (click)="goBack()" 
+        alt="Back button" 
+      />
     </div>
-    <h1>Enter code</h1>
-    <p class="otp-sub">We’ve sent an SMS with an activation code to your phone.</p>
-    <form (ngSubmit)="onVerify()">
-      <div class="otp-input">
-        <input type="text" maxlength="1" [(ngModel)]="otp[0]" />
-        <input type="text" maxlength="1" [(ngModel)]="otp[1]" />
-        <input type="text" maxlength="1" [(ngModel)]="otp[2]" />
-        <input type="text" maxlength="1" [(ngModel)]="otp[3]" />
-        <input type="text" maxlength="1" [(ngModel)]="otp[4]" />
-        <input type="text" maxlength="1" [(ngModel)]="otp[5]" />
-      </div>
-      <div class="sub-para">
-        <p>Reference: {{ reference }}</p>
-        <p>OTP Expires in: {{ countdown }}</p>
-      </div>
-      
-      <!-- <button mat-raised-button color="primary" type="submit">Verify</button> -->
-    </form>
+    <p>J</p>
   </div>
-  
+
+  <h1>Enter code</h1>
+  <p class="otp-sub">We’ve sent an SMS with an activation code to your phone.</p>
+
+  <form (ngSubmit)="onVerify()">
+    <div class="otp-input">
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[0]"
+        name="otp0"
+        (input)="onOtpInput($event, 0)"
+        [ngClass]="{'error-border': otpError}"
+        #otp0
+        required
+      />
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[1]"
+        name="otp1"
+        (input)="onOtpInput($event, 1)"
+        [ngClass]="{'error-border': otpError}"
+        #otp1
+        required
+      />
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[2]"
+        name="otp2"
+        (input)="onOtpInput($event, 2)"
+        [ngClass]="{'error-border': otpError}"
+        #otp2
+        required
+      />
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[3]"
+        name="otp3"
+        (input)="onOtpInput($event, 3)"
+        [ngClass]="{'error-border': otpError}"
+        #otp3
+        required
+      />
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[4]"
+        name="otp4"
+        (input)="onOtpInput($event, 4)"
+        [ngClass]="{'error-border': otpError}"
+        #otp4
+        required
+      />
+    </div>
+    <p *ngIf="otpError" class="otp-error-message">{{ otpErrorMessage }}</p>
+
+    <div class="sub-para">
+      <p>Reference: {{ reference }}</p>
+      <p>OTP Expires in: {{ countdown }}</p>
+    </div>
+  </form>
+</div>

@@ -28,10 +28,13 @@
       <input matInput formControlName="phoneNumber" placeholder="Enter Phone Number" />
     </mat-form-field>
   
-    <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid" (click)="goOtpPage()">
-      Next
-    </button>
-    <p class="terms">By creating an account or signing you agree to our <span class="conditions">Terms and Conditions</span></p>
+    <div class="button-section">
+      <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">
+        Next
+      </button>
+      <p class="terms">By creating an account or signing you agree to our <span class="conditions">Terms and Conditions</span></p>
+    </div>
+
   </form>
   
   </div>

@@ -12,6 +12,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotFoundComponent } from './sub-pages/not-found/not-found.component';
 import { AlreadyExistComponent } from './sub-pages/already-exist/already-exist.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlreadyExistComponent } from './sub-pages/already-exist/already-exist.c
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

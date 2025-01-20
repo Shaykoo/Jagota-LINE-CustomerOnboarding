@@ -8,13 +8,13 @@
 
       <div class="info-card">
         <div class="code">
-            <p>Code: 1234</p>
+            <p>Code: {{profileInfo?.CUST_CODE}}</p>
         </div>
-        <p class="company-name">McDonald's</p>
-        <p class="company-group">Alibaba Group holdings ltd</p>
+        <p class="company-name">{{profileInfo?.CUST_NAME}}</p>
+        <p class="company-group">{{profileInfo?.TRADE_NAME}}</p>
         <div class="phone">
             <img src="../../../assets/images/complete/phone.png"/>
-            <p>080-212-1xxx</p>
+            <p>{{profileInfo?.MOBILE}}</p>
         </div>
     </div>
 
@@ -23,20 +23,23 @@
             <img src="../../../assets/images/complete/storefront.png" alt="branch">
             <p>Branch</p>
         </div>
-        <div class="branch-list">
-            <p>Branch 1</p>
-            <div class="location">
-                <img src="../../../assets/images/complete/icon.png" alt="location pin"/>
-                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+        <div *ngFor="let branch of profileInfo?.BRANCH">
+            <div class="branch-list">
+                <p>{{branch?.BRANCH_NAME}}</p>
+                <div class="location">
+                    <img src="../../../assets/images/complete/icon.png" alt="location pin"/>
+                    <p>{{branch?.ADDRESS}}</p>
+                </div>
             </div>
         </div>
-        <div class="branch-list">
+        
+        <!-- <div class="branch-list">
             <p style="padding-top: 16px;">Branch 2</p>
             <div class="location">
                 <img src="../../../assets/images/complete/icon.png" alt="location pin"/>
                 <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="button-section">
