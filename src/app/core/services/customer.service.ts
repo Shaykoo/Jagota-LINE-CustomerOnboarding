@@ -43,7 +43,7 @@ export class CustomerService {
       .set('P_LINE_USERID', data.P_LINE_USERID)
       .set('P_REG_REF', data.P_REG_REF)
 
-    return this.http.post(`${this.apiUrl}/register_information/`, body.toString(), {
+    return this.http.post(`${this.apiUrl}/register_info/`, body.toString(), {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     });
   }

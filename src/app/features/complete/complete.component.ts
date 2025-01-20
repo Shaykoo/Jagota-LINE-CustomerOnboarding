@@ -12,6 +12,7 @@ export class CompleteComponent implements OnInit, OnDestroy {
   constructor(private renderer: Renderer2, private customerService: CustomerService, private router: Router) { }
 
   completeData: any;
+  referenceID: any = localStorage.getItem('referenceID');
 
   ngOnInit() {
     this.renderer.setStyle(document.body, 'background-color', 'white');
@@ -22,7 +23,7 @@ export class CompleteComponent implements OnInit, OnDestroy {
     let data = {
       P_USERNAME: 'JBT04',
       P_LINE_USERID: 'U44a5a98bfed83382e70a7fdffcb2f4dc',
-      P_REG_REF: '20250109134949'
+      P_REG_REF: this.referenceID
     }
     this.customerService.register_information_details(data).subscribe({
       next: (response) => {
@@ -33,6 +34,10 @@ export class CompleteComponent implements OnInit, OnDestroy {
         console.error('Error fetching register information details:', error);
       },
     });
+  }
+
+  goToListPage(){
+    this.router.navigate(['/profile']);
   }
 
   ngOnDestroy() {

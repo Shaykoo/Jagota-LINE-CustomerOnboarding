@@ -65,6 +65,16 @@
         #otp4
         required
       />
+      <input
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[5]"
+        name="otp5"
+        (input)="onOtpInput($event, 5)"
+        [ngClass]="{'error-border': otpError}"
+        #otp4
+        required
+      />
     </div>
     <p *ngIf="otpError" class="otp-error-message">{{ otpErrorMessage }}</p>
 

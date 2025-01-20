@@ -36,6 +36,7 @@ export class RegistrationComponent {
           console.log('Customer check successful:', response);
   
           const flag = response?.result[0]?.FLAG;
+          localStorage.setItem('checkCustomer', JSON.stringify(response?.result[0]));
           console.log("flag", flag);
           switch (flag) {
             case "1":

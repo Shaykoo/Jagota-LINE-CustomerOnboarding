@@ -6,7 +6,7 @@
         <p style="visibility: hidden;">J</p>
       </div>
 
-      <div class="info-card">
+    <div class="info-card">
         <div class="code">
             <p>Code: {{profileInfo?.CUST_CODE}}</p>
         </div>
@@ -24,7 +24,7 @@
             <p>Branch</p>
         </div>
         <div *ngFor="let branch of profileInfo?.BRANCH">
-            <div class="branch-list">
+            <div class="branch-list" style="margin: 16px 0;">
                 <p>{{branch?.BRANCH_NAME}}</p>
                 <div class="location">
                     <img src="../../../assets/images/complete/icon.png" alt="location pin"/>

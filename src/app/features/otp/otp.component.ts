@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./otp.component.scss'],
 })
 export class OtpComponent implements OnInit {
-  otp: string[] = ['', '', '', '', '']; 
+  otp: string[] = ['', '', '', '', '', '']; 
   reference = '123FB12';
   countdown = '03:59'; 
   customerData: any;
@@ -19,7 +19,7 @@ export class OtpComponent implements OnInit {
   otpErrorMessage = '';
   otpError = false;
 
-  @ViewChildren('otp0, otp1, otp2, otp3, otp4') otpInputs!: QueryList<ElementRef>; 
+  @ViewChildren('otp0, otp1, otp2, otp3, otp4, otp5') otpInputs!: QueryList<ElementRef>; 
 
   constructor(
     private otpService: OtpService,
@@ -36,6 +36,7 @@ export class OtpComponent implements OnInit {
 
   getCustomerData() {
     this.customerData = this.customerService.getCustomerData();
+    console.log("Customer dat OTP page:", this.customerData);
   }
 
   startCountdown() {
@@ -80,14 +81,15 @@ export class OtpComponent implements OnInit {
 
   onVerify() {
     const otpCode = this.otp.join('');
+    const contact_info = JSON.parse(localStorage.getItem('checkCustomer') || '{}');
     const otpDetails = {
       P_USERNAME: this.customerData?.P_USERNAME,
       P_LINE_USERID: 'U44a5a98bfed83382e70a7fdffcb2f4dc',
       P_OTP: otpCode,
       P_CUST_CODE: this.customerData?.P_CONTACT_CODE,
       P_CONTACT_MOBILE: this.customerData?.P_MOBILE_NO,
-      P_CUST_GROUP: '',
-      P_CUST_GROUP_STATUS: '',
+      P_CUST_GROUP: contact_info.CONTACT_INFO[0].CUST_GROUP,
+      P_CUST_GROUP_STATUS: contact_info.CONTACT_INFO[0].CUST_GROUP_STATUS,
     };
 
     console.log('Entered OTP:', otpDetails);
@@ -107,6 +109,7 @@ export class OtpComponent implements OnInit {
 
         switch (flag) {
           case "1":
+            localStorage.setItem('referenceID', res?.result[0].REG_REF);
             this.router.navigate(['/complete']);
             break;
           case "-1":

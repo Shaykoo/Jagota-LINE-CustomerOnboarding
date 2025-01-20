@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   constructor(private renderer: Renderer2, private customerService: CustomerService, private router: Router) { }
 
   ngOnInit() {
-    this.renderer.setStyle(document.body, 'background-color', 'white');
+    this.renderer.setStyle(document.body, 'background-color', '#FBF8FD');
     this.getListCustomer()
   }
 

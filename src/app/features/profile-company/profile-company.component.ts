@@ -31,7 +31,7 @@ export class ProfileCompanyComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.renderer.setStyle(document.body, 'background-color', 'white');
+    this.renderer.setStyle(document.body, 'background-color', '#FBF8FD');
     console.log('Received data:', this.profileData);
 
     if (this.profileData) {
